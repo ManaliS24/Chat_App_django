@@ -1,0 +1,6 @@
+1)if Friend connection added write a signal to add reverse friend connection
+2)create a login url and open app to login url.
+3)if user already logged in redirect to index.html
+4) print last received message on index page.
+last_messages:<QuerySet [<ChatMessage: Hi Steve>, <ChatMessage: I am good Steve. How are you?>]>
+5)register a new account/ forgot password.

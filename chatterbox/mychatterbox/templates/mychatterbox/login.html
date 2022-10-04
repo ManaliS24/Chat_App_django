@@ -1,0 +1,39 @@
+{% extends "mychatterbox/base.html" %}
+
+{% block content %}
+
+
+<div class="chat-container">
+
+    <div class="wrapper">
+        <!--div class="logo">
+            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
+        </div-->
+        <div class="logo">
+            ChatterBox
+        </div>
+        <div class="message">
+        {% if messages %}
+            {% for message in messages %}
+                {{ message}}
+            {% endfor %}
+        {% endif %}
+        </div>
+        <form class="p-3 mt-3" action="" method="POST">
+            {% csrf_token %}
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <button style="text-align:center;" id="login">Login</button>
+        </form>
+        <div class="text-center fs-6">
+            <a href="#">Forget password?</a> or <a href="{% url 'register'%}">Sign up</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
